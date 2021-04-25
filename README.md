@@ -23,7 +23,7 @@ mvn spring-boot:run
 
 ## How to use
 
-The application exposes endpoints that are described using the OpenAPI spec definition
+The application exposes endpoints that are described using the OpenAPI spec definition. It will run by default on port **8080**
 
 Once the application is running you are able to check these endpoints on this link:
 

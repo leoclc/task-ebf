@@ -2,27 +2,14 @@ package com.example.demo.repository;
 
 import com.example.demo.model.Company;
 import com.example.demo.model.Employee;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Service;
+import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
-public class CompanyRepository {
+public interface CompanyRepository extends CrudRepository<Company, Long> {
 
-    @Autowired
-    private JdbcTemplate jtm;
+    List<Company> findAll();
 
-    public List<Company> listAll() {
-        String sql = "SELECT * from TBL_COMPANY";
-        return jtm.query(sql, new BeanPropertyRowMapper<>(Company.class));
-    }
-
-    public Optional<Company> findById(Integer id) {
-        String sql = "SELECT * from TBL_COMPANY where id = ?";
-        return jtm.query(sql, new BeanPropertyRowMapper<>(Company.class), id).stream().findFirst();
-    }
+    Optional<Company> findById(Long id);
 }

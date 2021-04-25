@@ -1,16 +1,25 @@
 package com.example.demo.model;
 
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 public class EmployeeUpdateRequest {
 
+    @NotNull
+    private Long id;
     private Long companyId;
     private String name;
     private String surname;
     private String email;
     private String address;
     private Double salary;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Long getCompanyId() {
         return companyId;
@@ -59,4 +68,5 @@ public class EmployeeUpdateRequest {
     public void setSalary(Double salary) {
         this.salary = salary;
     }
+
 }

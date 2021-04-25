@@ -5,7 +5,7 @@ VALUES
 
 
 INSERT INTO
-  TBL_EMPLOYEE (companyId, name, surname, email, address, salary)
+  TBL_EMPLOYEE (company_id, name, surname, email, address, salary)
 VALUES
   (
     1,

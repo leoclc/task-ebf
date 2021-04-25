@@ -2,13 +2,15 @@ package com.example.demo.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "TBL_EMPLOYEE")
 public class Employee {
 
     @Id
     private Long id;
-    private Integer companyId;
+    private Long companyId;
     private String name;
     private String surname;
     private String email;
@@ -16,6 +18,22 @@ public class Employee {
     private Double salary;
 
     public Employee() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Long companyId) {
+        this.companyId = companyId;
     }
 
     public String getName() {
@@ -57,20 +75,6 @@ public class Employee {
     public void setSalary(Double salary) {
         this.salary = salary;
     }
-
-    public int getCompanyId() {
-        return companyId;
-    }
-
-    public void setCompanyId(int companyId) {
-        this.companyId = companyId;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(long aLong) {
-
-    }
 }
+
+

@@ -25,7 +25,7 @@ public class CompanyController {
 
 
     @RequestMapping(method = GET, path = "/company/{id}")
-    public CompanyDetailedResponse findCompany(@PathVariable Integer id) {
+    public CompanyDetailedResponse findCompany(@PathVariable Long id) {
         return service.findById(id);
     }
 

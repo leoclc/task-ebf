@@ -25,8 +25,6 @@ mvn spring-boot:run
 
 The application exposes endpoints that are described using the OpenAPI spec definition. It will run by default on port **8080**
 
-It will run by default on port **8080**
-
 Once the application is running you are able to check these endpoints on this link:
 
 http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/

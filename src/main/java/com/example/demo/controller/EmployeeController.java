@@ -37,24 +37,22 @@ public class EmployeeController {
     }
 
     @RequestMapping(method = POST, path = "/employee")
-    public void registerEmployee(@Valid @RequestBody EmployeeRegisterRequest registerRequest, HttpServletResponse response) {
+    public Employee registerEmployee(@Valid @RequestBody EmployeeRegisterRequest registerRequest, HttpServletResponse response) {
         Employee e = modelMapper.map(registerRequest, Employee.class);
-        service.save(e);
         response.setStatus(HttpServletResponse.SC_CREATED);
+        return service.save(e);
     }
 
     @RequestMapping(method = DELETE, path = "/employee/{id}")
-    public void deleteEmployee(@PathVariable Long id) {
+    public void deleteEmployee(@PathVariable Long id , HttpServletResponse response) {
         service.delete(id);
     }
 
 
     @RequestMapping(method = PATCH, path = "/employee")
-    public void updateEmployee(@Valid @RequestBody EmployeeUpdateRequest updateRequest) {
-        System.out.println("update request: "+ updateRequest.getId());
+    public Employee updateEmployee(@Valid @RequestBody EmployeeUpdateRequest updateRequest) {
         Employee e = modelMapper.map(updateRequest, Employee.class);
-        System.out.println("AQUI: "+e.getId());
-        service.save(e);
+        return service.save(e);
     }
 
 

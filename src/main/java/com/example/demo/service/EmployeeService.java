@@ -28,7 +28,7 @@ public class EmployeeService {
         return repository.findByCompanyId(id);
     }
 
-    public void save(Employee e) {
+    public Employee save(Employee e) {
         Optional<Employee> toPersist = Optional.empty();
         if(e.getId() != null) {
             toPersist = repository.findById(e.getId());
@@ -38,7 +38,7 @@ public class EmployeeService {
         } else {
             toPersist = Optional.of(e);
         }
-        repository.save(toPersist.get());
+        return repository.save(toPersist.get());
     }
 
     public Optional<Employee> findById(Long id) {
